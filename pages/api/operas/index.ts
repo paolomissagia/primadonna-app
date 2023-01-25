@@ -1,6 +1,6 @@
 import dbConnect from "../../../lib/dbConnect";
 import OperaModel from "@/models/OperaModel";
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
