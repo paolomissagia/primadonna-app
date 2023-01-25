@@ -42,10 +42,20 @@ export default function Operas() {
   const [isOperas, setOperas] = useState(null);
   const [isReady, setReady] = useState(false);
 
+  const handleOperas = async () => {
+    const res = await fetch("/api/operas");
+    const data = await res.json();
+    setOperas(data.data);
+    setReady(true);
+  };
+
+  useEffect(() => {
+    handleOperas();
+  }, []);
+
   return (
     <div id="operas" className="bg-white min-h-screen">
       <div>
-        {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -88,8 +98,6 @@ export default function Operas() {
                       <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
                   </div>
-
-                  {/* Filters */}
                   <form className="mt-4 border-t border-gray-200">
                     {filters.map((section) => (
                       <Disclosure
@@ -154,13 +162,11 @@ export default function Operas() {
             </div>
           </Dialog>
         </Transition.Root>
-
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative z-10 flex items-baseline justify-between pt-24 pb-6 border-b border-gray-200">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">
               Operas
             </h1>
-
             <div className="flex items-center">
               <button
                 type="button"
@@ -172,10 +178,8 @@ export default function Operas() {
               </button>
             </div>
           </div>
-
           <section aria-labelledby="products-heading" className="pt-6 pb-24">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-10">
-              {/* Filters */}
               <form className="hidden lg:block">
                 {filters.map((section) => (
                   <Disclosure
@@ -235,8 +239,6 @@ export default function Operas() {
                   </Disclosure>
                 ))}
               </form>
-
-              {/* Product grid */}
               <div className="lg:col-span-3">
                 <div className="border-4 border-dashed border-gray-200 rounded-lg h-[45rem] overflow-scroll">
                   {isReady ? (
