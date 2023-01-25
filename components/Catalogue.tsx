@@ -1,10 +1,10 @@
-import Caruso from "../assets/images/caruso.png";
-import Gedda from "../assets/images/gedda.png";
-import Beniamino from "../assets/images/beniamino.png";
-import Jussi from "../assets/images/jussi.jpg";
-import Lanza from "../assets/images/lanza.jpg";
-import Monaco from "../assets/images/monaco.jpg";
-import Pavarotti from "../assets/images/pavarotti.jpg";
+import Caruso from "../assets/singers/caruso.png";
+import Gedda from "../assets/singers/gedda.png";
+import Beniamino from "../assets/singers/beniamino.png";
+import Jussi from "../assets/singers/jussi.jpg";
+import Lanza from "../assets/singers/lanza.jpg";
+import Monaco from "../assets/singers/monaco.jpg";
+import Pavarotti from "../assets/singers/pavarotti.jpg";
 import Image from "next/image";
 
 export default function Example() {
