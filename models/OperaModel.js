@@ -10,4 +10,4 @@ const operaSchema = new Schema({
   description: String,
 });
 
-module.exports = mongoose.model("Opera", operaSchema);
+module.exports = mongoose.models.Opera || mongoose.model("Opera", operaSchema);
