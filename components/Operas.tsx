@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
-import { Dialog, Disclosure, Transition } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { FunnelIcon, MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
 import Opera from "./shared/Opera";
 
 export default function Operas() {
@@ -21,7 +20,7 @@ export default function Operas() {
   }, []);
 
   return (
-    <div id="operas" className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen">
       <div>
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
           <Dialog
@@ -72,7 +71,10 @@ export default function Operas() {
         </Transition.Root>
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative z-10 flex items-baseline justify-between pt-24 pb-6 border-b border-gray-200">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+            <h1
+              id="operas"
+              className="text-4xl font-bold tracking-tight text-gray-900"
+            >
               Operas
             </h1>
             <div className="flex items-center">

@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Photo from "../assets/hero.jpg";
 import Logo from "../assets/logo.png";
 import Image from "next/image";
+import { scrollTo } from "@/lib/scrollToView";
 
 const navigation = [
   { name: "home", id: "home" },
@@ -50,7 +51,8 @@ export default function Example() {
                 <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
                   {navigation.map((item) => (
                     <button
-                      key={item.name}
+                      key={item.id}
+                      onClick={() => scrollTo(item.name)}
                       className="font-medium text-gray-500 hover:text-gray-900 hover:cursor-pointer"
                     >
                       {item.name}
@@ -92,8 +94,8 @@ export default function Example() {
                   <div className="px-2 pt-2 pb-3 space-y-1">
                     {navigation.map((item) => (
                       <button
-                        // to={item.id}
-                        key={item.name}
+                        key={item.id}
+                        onClick={() => scrollTo(item.name)}
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 hover:cursor-pointer"
                       >
                         {item.name}
@@ -120,7 +122,7 @@ export default function Example() {
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <button
-                    // to="about"
+                    onClick={() => scrollTo("about")}
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10 hover:cursor-pointer"
                   >
                     start

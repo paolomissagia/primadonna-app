@@ -6,6 +6,7 @@ import Lanza from "../assets/singers/lanza.jpg";
 import Monaco from "../assets/singers/monaco.jpg";
 import Pavarotti from "../assets/singers/pavarotti.jpg";
 import Image from "next/image";
+import { scrollTo } from "@/lib/scrollToView";
 
 export default function Example() {
   return (
@@ -21,7 +22,7 @@ export default function Example() {
               way, based on the works of the greatest composers.
             </p>
             <button
-              //   to="operas"
+              onClick={() => scrollTo("operas")}
               className="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700 mt-8 hover:cursor-pointer"
             >
               operas
